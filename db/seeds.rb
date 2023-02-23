@@ -16,9 +16,11 @@ more_movies = [
   {:title => 'Nomadland', :rating => 'R',
     :release_date => '19-Feb-2021'},
   {:title => 'CODA', :rating => 'PG-13',
-    :release_date => '13-Aug-2021'}
+    :release_date => '13-Aug-2021'},
+  {:title => 'Conjuring', :rating => 'R',
+    :release_date => '19-July-2013'}
 ]
 
 more_movies.each do |movie|
-  Movie.create!(movie)
+  Movie.where(movie).first_or_create
 end
